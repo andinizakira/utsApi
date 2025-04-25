@@ -5,7 +5,7 @@ namespace App\Services;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\RequestException;
 
-class MovieApiService
+class RealTimeApiService
 {
     protected $client;
     protected $apiKey;
@@ -17,10 +17,10 @@ class MovieApiService
     }
 
     // Fungsi untuk mendapatkan semua tim
-    public function getAllmovie()
+    public function getAllRealTime()
     {
         try {
-            $response = $this->client->request('GET', 'https://cinema-api.p.rapidapi.com/get_ids/Titanic/movies', [
+            $response = $this->client->request('GET', 'https://real-time-finance-data.p.rapidapi.com/company-cash-flow?symbol=AAPL%3ANASDAQ&period=QUARTERLY&language=en', [
                 'headers' => [
                     'x-rapidapi-key' => $this->apiKey
                 ],
